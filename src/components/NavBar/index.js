@@ -21,6 +21,7 @@ const NavBar = React.createClass({
     return (
       <nav>
         <ul>
+          <li><h1>W</h1></li>
           {
             navItems.map((item) => {
               return (

@@ -1,20 +1,45 @@
 nav {
 	display: flex;
-	jusitfy-content: center;
-	background: #549367;
-	padding: 25px 35px;
+	background: $green;
+	min-width: 100px;
 	text-align: center;
 
 	ul {
 		padding: 0px;
+		margin: 0px;
+		width: 100%;
 	}
 
 	li {
 		list-style: none;
+		padding: 15px 10px;
+		transition: background 0.2s ease-in;
+		
+		h1 {
+			font-family: $neucha;
+			font-size: 3em;
+			color: white;
+			margin-bottom: 100px;
+		}
+
+		&:hover:not(:first-child) {
+			background: $dark-green;
+			cursor: pointer;
+
+			button {
+				color: #fff;
+			}
+		}
 
 		button {
 			border: none;
-			background: white;
+			background: transparent;
+			font-size: 2em;
+			color: #ddd;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 }
