@@ -1,8 +1,9 @@
-
-
+/* VENDOR */
+@import 'vendor/normalize.scss';
 
 /* DEFAULTS */
-@import 'normalize.scss';
+@import 'defaults/_colors.scss';
+@import 'defaults/_fonts.scss';
 
 /* COMPONENTS */
 @import 'components/_navbar.scss';
