@@ -1,0 +1,21 @@
+nav {
+	display: flex;
+	jusitfy-content: center;
+	background: #549367;
+	padding: 25px 35px;
+	text-align: center;
+
+	ul {
+		padding: 0px;
+	}
+
+	li {
+		list-style: none;
+
+		button {
+			border: none;
+			background: white;
+		}
+	}
+}
+
