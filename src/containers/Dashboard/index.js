@@ -6,7 +6,7 @@ const Dashboard = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className='dashboard'>
         <NavBar />
         <UsersList />
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Dashboard from 'containers/Dashboard'
-import 'scss/main.scss'
+import './scss/main.scss'
 
 class App extends Component {
   render() {

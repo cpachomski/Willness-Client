@@ -1,28 +1,4 @@
 import React from 'react'
-import FontAwesome from 'react-fontawesome'
-
-const NavBar = React.createClass({
-
-  render() {
-    return (
-      <nav>
-        <ul>
-          {
-            navItems.map((item) => {
-              return (
-                <li className='nav--list-item'>
-                  <button classname='nav--button' data-nav-name={item.name}>
-                    <FontAwesome name={item.iconClass} />
-                  </button>
-                </li>
-              )
-            })
-          }
-        </ul>
-      </nav>
-    )
-  }
-})
 
 const navItems = [
   {
@@ -38,5 +14,28 @@ const navItems = [
     iconClass: 'cog'
   }
 ]
+
+const NavBar = React.createClass({
+
+  render() {
+    return (
+      <nav>
+        <ul>
+          {
+            navItems.map((item) => {
+              return (
+                <li key={item.name} className='nav--list-item'>
+                  <button className='nav--button' data-nav-name={item.name}>
+                      <i className={`fa fa-${item.iconClass}`}></i>
+                  </button>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </nav>
+    )
+  }
+})
 
 export default NavBar
