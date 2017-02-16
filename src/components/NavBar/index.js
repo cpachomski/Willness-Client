@@ -12,6 +12,10 @@ const navItems = [
   {
     name: 'settings',
     iconClass: 'cog'
+  },
+  {
+    name: 'logout',
+    iconClass: 'sign-out'
   }
 ]
 
