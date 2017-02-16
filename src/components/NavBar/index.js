@@ -1,46 +1,48 @@
 import React from 'react'
 import classNames from 'classnames'
+import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { setNavBarLoaded } from 'actions/actions'
 
 const navItems = [
   {
     name: 'dashboard',
-    iconClass: 'tachometer'
+    iconClass: 'tachometer',
+    linkTo: '/dashboard'
+  },
+  {
+    name: 'Workouts',
+    iconClass: 'list',
+    linkTo: '/workouts'
   },
   {
     name: 'profile',
-    iconClass: 'id-card-o'
+    iconClass: 'id-card-o',
+    linkTo: '/profile'
   },
   {
     name: 'settings',
-    iconClass: 'cog'
+    iconClass: 'cog',
+    linkTo: '/settings'
   },
   {
     name: 'logout',
-    iconClass: 'sign-out'
+    iconClass: 'sign-out',
+    linkTo: '/'
   }
 ]
 
 const NavBar = React.createClass({
 
 
-  //NOTE MAKE HIGHER ORDER COMPONENT THAT DOES DIFFERENT TYPES OF ANIMATIONS BASED ON CLASSES GIVEN TO CHILD COMPONENT
-
-  getInitialState() {
-    return {
-      loaded: false
-    }
-  },
-
   componentDidMount() {
     setTimeout(() => {
-      this.setState({
-        loaded: true
-      })  
+      this.props.dispatch(setNavBarLoaded())
     }, 500)
   },
 
   render() {
-    const { loaded } = this.state
+    const { loaded } = this.props
     const loadingClass = classNames({
       loaded
     })
@@ -54,7 +56,7 @@ const NavBar = React.createClass({
               return (
                 <li key={item.name} className='nav--list-item'>
                   <button className='nav--button' data-nav-name={item.name}>
-                      <i className={`fa fa-${item.iconClass}`}></i>
+                      <Link to={item.linkTo} className={`fa fa-${item.iconClass}`}></Link>
                   </button>
                 </li>
               )
@@ -66,4 +68,10 @@ const NavBar = React.createClass({
   }
 })
 
-export default NavBar
+const mapStateToProps = (state) => {
+  return {
+    loaded: state.view.navBarLoaded
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)

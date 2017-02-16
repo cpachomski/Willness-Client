@@ -1,0 +1,1 @@
+export const SET_NAVBAR_LOADED = 'SET_NAVBAR_LOADED'
