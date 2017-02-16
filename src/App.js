@@ -4,6 +4,10 @@ import { BrowserRouter, Match } from 'react-router'
 import configureStore from 'store'
 
 import Dashboard from 'containers/Dashboard'
+import Workouts from 'containers/Workouts'
+import Profile from 'containers/Profile'
+import Settings from 'containers/Settings'
+
 import './scss/main.scss'
 
 const store = configureStore()
@@ -16,6 +20,9 @@ class App extends Component {
           <div className='app'>
             <Match exactly pattern='/' component={Dashboard} />
             <Match pattern='/dashboard' component={Dashboard} />
+            <Match pattern='/workouts' component={Workouts} />
+            <Match pattern='/profile' component={Profile} />
+            <Match pattern='/settings' component={Settings} />
           </div>
         </Provider>
       </BrowserRouter>

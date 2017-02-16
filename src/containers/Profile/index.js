@@ -1,16 +1,16 @@
 import React from 'react'
 import NavBar from 'components/NavBar'
 
-const Workouts = React.createClass({
+const Profile = React.createClass({
 
   render() {
     return (
-      <div className='page workouts'>
+      <div className='page profile'>
         <NavBar />
-        <h1>Workouts</h1>
+        <h1>Profile</h1>
       </div>
     )
   }
 })
 
-export default Workouts
+export default Profile
