@@ -26,7 +26,7 @@ const UsersList = React.createClass({
           {
             users.map((user) => {
               return (
-                <li key={user._id}>{user.firstName} {user.lastName} - </li>
+                <li key={user._id}>{user.firstName} {user.lastName} - {user.email}</li>
               )
             })
           }

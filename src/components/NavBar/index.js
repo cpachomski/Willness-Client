@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 const navItems = [
   {
@@ -21,9 +22,31 @@ const navItems = [
 
 const NavBar = React.createClass({
 
+
+  //NOTE MAKE HIGHER ORDER COMPONENT THAT DOES DIFFERENT TYPES OF ANIMATIONS BASED ON CLASSES GIVEN TO CHILD COMPONENT
+
+  getInitialState() {
+    return {
+      loaded: false
+    }
+  },
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        loaded: true
+      })  
+    }, 500)
+  },
+
   render() {
+    const { loaded } = this.state
+    const loadingClass = classNames({
+      loaded
+    })
+
     return (
-      <nav>
+      <nav className={loadingClass}>
         <ul>
           <li><h1>W</h1></li>
           {
