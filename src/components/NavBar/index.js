@@ -41,6 +41,10 @@ const NavBar = React.createClass({
     }, 500)
   },
 
+  handleLogout() {
+    console.log('yo')
+  },
+
   render() {
     const { loaded } = this.props
     const loadingClass = classNames({
@@ -55,7 +59,8 @@ const NavBar = React.createClass({
             navItems.map((item) => {
               return (
                 <li key={item.name} className='nav--list-item' data-nav-name={item.name}>
-                    <Link to={item.linkTo} className={`fa fa-${item.iconClass}`}></Link>
+                    <Link to={item.linkTo}
+                          className={`fa fa-${item.iconClass}`}></Link>
                 </li>
               )
             })
