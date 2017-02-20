@@ -63,11 +63,15 @@
 	}
 	
 	p > button {
-	
+		background: transparent;
 		border: 0px;
 		color: $green;
 		text-decoration: underline;
 		padding: 0px 0px 0px 5px;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 

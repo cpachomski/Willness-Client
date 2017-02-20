@@ -1,4 +1,4 @@
-import { SET_NAVBAR_LOADED } from '../actions'
+import { SET_NAVBAR_LOADED } from 'actions'
 
 const DEFAULT_STATE = {
   navBarLoaded: false

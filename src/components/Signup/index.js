@@ -12,7 +12,7 @@ const Signup = React.createClass({
   checkFormComplete() {
     const { firstName, lastName, username, email, password, passwordConfirmation } = this.refs
     const emailReg = /\S+@\S+\.\S+/
-    let formComplete
+    let formComplete = false
 
     if (
       emailReg.test(email.value) &&
@@ -25,15 +25,13 @@ const Signup = React.createClass({
       passwordConfirmation.value.length > 0 &&
       passwordConfirmation.value !== undefined) { 
         formComplete = true
-    } else {
-        formComplete = false
-    }
-
+    } 
+    
     this.setState({formComplete})
   },
 
   handleSubmit() {
-    console.log('yo')
+    
   },
 
   render() {

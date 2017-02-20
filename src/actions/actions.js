@@ -1,9 +1,7 @@
-import {
-  SET_NAVBAR_LOADED
-} from 'actions'
+import { loginUser } from 'actions/user'
+import { setNavBarLoaded } from 'actions/view'
 
-export function setNavBarLoaded() {
-  return {
-    type: SET_NAVBAR_LOADED,
-  }
+export {
+  loginUser,
+  setNavBarLoaded
 }

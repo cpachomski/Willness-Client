@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { loginUser } from 'actions/actions'
 
 const Login = React.createClass({
   
@@ -9,22 +11,30 @@ const Login = React.createClass({
   },
 
   checkFormComplete() {
-    const { usernameOrEmail, password } = this.refs
+    const { email, password } = this.refs
+    const emailReg = /\S+@\S+\.\S+/
     let formComplete
     
-    if (usernameOrEmail.value.length > 0 && password.value.length > 0) {
+    if (
+      email.value.length > 0 &&
+      password.value.length > 0 &&
+      emailReg.test(email.value)
+      ) {
       formComplete = true
     } else {
       formComplete = false
     }
 
-    console.log(formComplete)
-
     this.setState({ formComplete })
   },
 
   handleSubmit() {
-    console.log('yo')
+    const { email, password } = this.refs
+    
+    this.props.dispatch(loginUser({
+        email: email.value,
+        password: password.value
+    }))
   },
 
   render() {
@@ -36,7 +46,7 @@ const Login = React.createClass({
           <h3>Login</h3>
           <form>
             <div className='row'>
-              <input onKeyUp={this.checkFormComplete} ref='usernameOrEmail' type='text' placeholder='email or username'/>
+              <input onKeyUp={this.checkFormComplete} ref='email' type='email' placeholder='email'/>
               <input onKeyUp={this.checkFormComplete} ref='password' type='password' placeholder='password' />
             </div>
           </form>
@@ -47,4 +57,5 @@ const Login = React.createClass({
   }
 })
 
-export default Login
+
+export default connect()(Login)
