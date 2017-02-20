@@ -1,0 +1,38 @@
+.entry--box {
+	margin-top: 50px;
+	font-family: $roboto;
+
+	h3 {
+		color: black;
+		font-size: 3em;
+		margin-bottom: 5px;
+	}
+
+	form {
+		display: flex;
+		justify-content: space-between;
+
+		> div {
+			width: 45%;
+		}
+	}
+
+	input {
+		
+		box-sizing: border-box;
+		width: 100%;
+
+		&:nth-child(3) {
+			display: block;
+		}
+	}	
+
+	button {
+		background: none;
+		border: 0px;
+		color: $green;
+		text-decoration: underline;
+		padding: 0px 0px 0px 5px;
+	}
+}
+

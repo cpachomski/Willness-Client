@@ -54,10 +54,8 @@ const NavBar = React.createClass({
           {
             navItems.map((item) => {
               return (
-                <li key={item.name} className='nav--list-item'>
-                  <button className='nav--button' data-nav-name={item.name}>
-                      <Link to={item.linkTo} className={`fa fa-${item.iconClass}`}></Link>
-                  </button>
+                <li key={item.name} className='nav--list-item' data-nav-name={item.name}>
+                    <Link to={item.linkTo} className={`fa fa-${item.iconClass}`}></Link>
                 </li>
               )
             })

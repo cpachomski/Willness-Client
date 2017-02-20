@@ -5,7 +5,7 @@ const Settings = React.createClass({
 
   render() {
     return (
-      <div className='settings'>
+      <div className='page settings'>
         <NavBar />
         <h1>Settings</h1>
       </div>

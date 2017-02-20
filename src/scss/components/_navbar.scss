@@ -36,7 +36,7 @@ nav {
 
 	li {
 		list-style: none;
-		padding: 15px 10px;
+		padding: 20px 10px;
 		transition: background 0.1s ease-in;
 		
 
@@ -66,14 +66,12 @@ nav {
 			margin-bottom: 100px;
 		}
 
-		button {
-			> a {
-				color: #ddd;
-				text-decoration: none;
-			}
+		a {
+			color: #ddd;
+			text-decoration: none;
 			border: none;
 			background: transparent;
-			font-size: 2em;
+			font-size: 2em !important;
 			transition: color 0.1s ease-in;
 			&:hover {
 				cursor: pointer;

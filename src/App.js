@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Match } from 'react-router'
 import configureStore from 'store'
 
+import Entry from 'containers/Entry'
 import Dashboard from 'containers/Dashboard'
 import Workouts from 'containers/Workouts'
 import Profile from 'containers/Profile'
@@ -18,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
         <Provider store={store}>
           <div className='app'>
-            <Match exactly pattern='/' component={Dashboard} />
+            <Match exactly pattern='/' component={Entry} />
             <Match pattern='/dashboard' component={Dashboard} />
             <Match pattern='/workouts' component={Workouts} />
             <Match pattern='/profile' component={Profile} />
