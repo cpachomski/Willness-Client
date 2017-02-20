@@ -24,11 +24,6 @@ const navItems = [
     name: 'settings',
     iconClass: 'cog',
     linkTo: '/settings'
-  },
-  {
-    name: 'logout',
-    iconClass: 'sign-out',
-    linkTo: '/'
   }
 ]
 
@@ -42,7 +37,9 @@ const NavBar = React.createClass({
   },
 
   handleLogout() {
-    console.log('yo')
+    if(localStorage) {
+      localStorage.removeItem('willnessUser')
+    }
   },
 
   render() {
@@ -65,6 +62,9 @@ const NavBar = React.createClass({
               )
             })
           }
+          <li className='nav--list-item' data-nav-name='logout'>
+            <Link onClick={this.handleLogout} to='/' className='fa fa-sign-out' ></Link>
+          </li>
         </ul>
       </nav>
     )
