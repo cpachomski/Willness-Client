@@ -15,7 +15,7 @@ const setUser = (state, action) => {
 
 const setToLocalStorage = (user) => {
   if(localStorage) {
-    localStorage.setItem('willnessUser', JSON.stringifiy(user))
+    localStorage.setItem('willnessUser', JSON.stringify(user))
   }
 }
 
