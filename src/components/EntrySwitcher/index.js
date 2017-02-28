@@ -6,7 +6,7 @@ const EntrySwitcher = React.createClass({
 
   getInitialState() {
     return {
-      loginVisible: true
+      loginVisible: false
     }
   },
 

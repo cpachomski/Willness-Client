@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { registerUser } from 'actions/actions'
 
 const Signup = React.createClass({
 
@@ -10,7 +12,7 @@ const Signup = React.createClass({
   },
 
   checkFormComplete() {
-    const { firstName, lastName, username, email, password, passwordConfirmation } = this.refs
+    const { firstName, lastName, email, password, passwordConfirmation } = this.refs
     const emailReg = /\S+@\S+\.\S+/
     let formComplete = false
 
@@ -19,7 +21,6 @@ const Signup = React.createClass({
       password.value === passwordConfirmation.value &&
       firstName.value !== undefined &&
       lastName.value !== undefined &&
-      username.value !== undefined &&
       password.value !== undefined &&
       password.value.length > 0 &&
       passwordConfirmation.value.length > 0 &&
@@ -31,7 +32,17 @@ const Signup = React.createClass({
   },
 
   handleSubmit() {
-    
+    const { firstName, lastName, email, password, passwordConfirmation } = this.refs
+    if (password.value === passwordConfirmation.value) {
+      this.props.dispatch(registerUser({ 
+          firstName: firstName.value,
+          lastName: lastName.value,
+          email: email.value,
+          password: password.value  
+      }))
+    } else {
+      alert('Passwords do not match')
+    }
   },
 
   render() {
@@ -45,10 +56,9 @@ const Signup = React.createClass({
           <div className='column'>
             <input onChange={this.checkFormComplete} ref='firstName' type='text' placeholder='first' />
             <input onChange={this.checkFormComplete} ref='lastName' type='text' placeholder='last'/>
-            <input onChange={this.checkFormComplete} ref='username' type='text' placeholder='username' />
+            <input  onKeyUp={this.checkFormComplete} ref='email' type='email' placeholder='email'/>
           </div>
           <div className='column'>
-            <input  onKeyUp={this.checkFormComplete} ref='email' type='email' placeholder='email'/>
             <input  onKeyUp={this.checkFormComplete} ref='password' type='password' placeholder='password' />
             <input  onKeyUp={this.checkFormComplete} ref='passwordConfirmation' type='password' placeholder='confirm password' />
           </div>
@@ -60,4 +70,4 @@ const Signup = React.createClass({
   }
 })
 
-export default Signup
+export default connect()(Signup)

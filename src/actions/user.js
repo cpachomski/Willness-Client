@@ -38,6 +38,32 @@ function getUser(dispatch, token) {
     })
 }
 
+export function registerUser(payload) {
+  const { firstName, lastName, email, password } = payload
+  return function(dispatch) {
+    dispatch(setLoginStarted())
+
+    request
+      .post('api/users')
+      .send({
+        user: {
+          firstName,
+          lastName,
+          email,
+          password
+        }
+      })
+      .end((err, data) => {
+        if(err) { console.log(err) }
+        const parsedData = JSON.parse(data.text)
+        const user = parsedData._doc
+        const token = parsedData.token
+        dispatch(setToken(token))
+        dispatch(setUser(user))
+      })
+  }
+}
+
 export function loginUser(payload) {
   const { email, password } = payload
 
