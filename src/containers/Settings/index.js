@@ -7,7 +7,9 @@ const Settings = React.createClass({
     return (
       <div className='page settings'>
         <NavBar />
-        <h1>Settings</h1>
+        <div className='page--container'>
+          <h1>Settings</h1>
+        </div>
       </div>
     )
   }

@@ -7,7 +7,9 @@ const Profile = React.createClass({
     return (
       <div className='page profile'>
         <NavBar />
-        <h1>Profile</h1>
+        <div className='page--container'>
+          <h1>Profile</h1>
+        </div>
       </div>
     )
   }

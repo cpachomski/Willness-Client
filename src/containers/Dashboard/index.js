@@ -8,7 +8,9 @@ const Dashboard = React.createClass({
     return (
       <div className='page dashboard'>
         <NavBar />
-        <UsersList />
+        <div className='page--container'>
+          <UsersList />
+        </div>
       </div>
     )
 
