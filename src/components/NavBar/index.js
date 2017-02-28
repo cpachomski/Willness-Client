@@ -11,7 +11,7 @@ const navItems = [
     linkTo: '/dashboard'
   },
   {
-    name: 'Workouts',
+    name: 'workouts',
     iconClass: 'list',
     linkTo: '/workouts'
   },
