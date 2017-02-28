@@ -15,7 +15,6 @@ const WorkoutForm = React.createClass({
   },
 
   toggleRoutineForm() {
-    console.log('open routine form')
 
     this.setState({
       routineFormVisible: !this.state.routineFormVisible
@@ -23,9 +22,10 @@ const WorkoutForm = React.createClass({
   },
 
   render() {
-    const { userId } = this.props
+    const { userId, newWorkout } = this.props
+    console.log(newWorkout.routines)
     const { routineFormVisible } = this.state
-
+  
     const routineForm = routineFormVisible ? <RoutineForm /> : null
 
     return (
@@ -45,7 +45,8 @@ const WorkoutForm = React.createClass({
 
 const mapStateToProps = (state) => {
   return {
-    userId: state.user._id
+    userId: state.user._id,
+    newWorkout: state.workout.newWorkout
   }
 }
 
