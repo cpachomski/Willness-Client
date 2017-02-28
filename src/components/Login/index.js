@@ -51,7 +51,7 @@ const Login = React.createClass({
             </div>
           </form>
           <button className='submit' onClick={this.handleSubmit} disabled={!formComplete}>Submit</button>
-          <p>Already have an account? Log in<button onClick={switchVisible}>here</button>.</p>
+          <p>Don't have an account? Sign up <button onClick={switchVisible}>here</button>.</p>
         </div>
     )
   }
