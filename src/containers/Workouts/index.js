@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from 'components/NavBar'
 import WorkoutForm from 'components/WorkoutForm'
+import WorkoutList from 'components/WorkoutList'
 
 const Workouts = React.createClass({
 
@@ -11,6 +12,7 @@ const Workouts = React.createClass({
         <div className='page--container'>
           <h1>Workouts</h1>
           <WorkoutForm />
+          <WorkoutList/>
         </div>
       </div>
     )

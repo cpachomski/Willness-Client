@@ -34,7 +34,7 @@ const RoutineForm = React.createClass({
         <input type='number' ref='weight' placeholder='weight' />
         
         <div>
-          <input type='submit' value='submit' />
+          <input type='submit' value='Add to workout' />
         </div>
       </form>
     )
