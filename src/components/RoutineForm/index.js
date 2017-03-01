@@ -13,6 +13,7 @@ const RoutineForm = React.createClass({
   handleSubmit(e) {
     e.preventDefault()
     const { name, reps, sets, weight } = this.refs
+    const { toggleRoutineForm } = this.props
     
     this.props.dispatch(addRoutine({
       name: name.value,
@@ -22,18 +23,22 @@ const RoutineForm = React.createClass({
     }))
 
     this.cleanInputs()
+    toggleRoutineForm()
   },
 
   render() {
+    const { toggleRoutineForm } = this.props
     return (
-      <form className='routine-form' onSubmit={this.handleSubmit}>
-        <h5>Routine Form</h5>
-        <input type='text' ref='name' placeholder='name' />
-        <input type='number' ref='reps' placeholder='reps' />
-        <input type='number' ref='sets' placeholder='sets' />
-        <input type='number' ref='weight' placeholder='weight' />
-        
-        <div>
+      <form className='routine-form modal' onSubmit={this.handleSubmit}>
+        <div className='modal-inputs'>
+          <h5>Add Routine</h5>
+          <input type='text' ref='name' placeholder='name' />
+          <input type='number' ref='reps' placeholder='reps' />
+          <input type='number' ref='sets' placeholder='sets' />
+          <input type='number' ref='weight' placeholder='weight' />
+        </div>
+        <div className='modal-buttons'>
+          <button onClick={toggleRoutineForm}>cancel</button>
           <input type='submit' value='Add to workout' />
         </div>
       </form>
