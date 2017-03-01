@@ -1,12 +1,13 @@
 import { loginUser, registerUser } from 'actions/user'
 import { setNavBarLoaded } from 'actions/view'
-import { addWorkout, addRoutine } from 'actions/workout'
+import { pushWorkout, addRoutine, getUserWorkouts } from 'actions/workout'
 import { setRoutine } from 'actions/routine'
 
 export {
   loginUser,
   registerUser,
-  addWorkout,
+  pushWorkout,
+  getUserWorkouts,
   addRoutine,
   setNavBarLoaded
 }
