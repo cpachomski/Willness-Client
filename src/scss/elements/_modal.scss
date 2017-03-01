@@ -1,0 +1,12 @@
+.modal {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.modal-buttons {
+	border-top: 1px solid $green;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

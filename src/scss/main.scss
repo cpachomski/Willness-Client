@@ -9,10 +9,13 @@
 
 /* ELEMENTS */
 @import 'elements/_forms.scss';
+@import 'elements/_modal.scss';
+@import 'elements/_headers.scss';
 
 /* COMPONENTS */
 @import 'components/_navbar.scss';
 @import 'components/_entry-switcher.scss';
+@import 'components/_workout-card.scss';
 
 /* CONTAINERS */
 @import 'containers/_dashboard.scss';
