@@ -5,7 +5,7 @@ const RoutineCard = React.createClass({
 
     const { _muscleGroups, name, reps, sets, weight} = this.props
     return (
-      <div className='routine--card slideIn'>
+      <div className='routine--card'>
         <h4 className='routine--name'>{name}</h4>
         <div className='routine--stats'>
           <p className='routine--reps'>
