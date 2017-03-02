@@ -1,0 +1,41 @@
+.routine--card {
+	font-size: 12px;
+	max-width: 440px;
+	border: 3px solid $light-green;
+	margin: 10px 0px;
+	padding: 15px 20px;
+	background-color: white;
+
+	&:first-child {
+		margin-top: 35px;
+	}
+
+	.routine--name {
+		margin: 0;
+		font-size: 20px;
+	}
+
+	.routine--stats {
+		> p {
+			display: inline-block;
+			margin: 25px 15px 0px 2px;
+			font-family: $roboto;
+			border-left: 2px solid #333;
+			padding-left: 5px;
+			> span {
+				display: block;
+
+				> span {
+					color: $green;
+					font-size: 20px;
+				}
+
+				&:first-child {
+					color: #555;
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+
+}
