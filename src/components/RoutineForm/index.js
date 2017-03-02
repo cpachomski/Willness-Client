@@ -23,7 +23,6 @@ const RoutineForm = React.createClass({
     }))
 
     this.cleanInputs()
-    toggleRoutineForm()
   },
 
   render() {
@@ -37,7 +36,7 @@ const RoutineForm = React.createClass({
           <input type='number' ref='weight' placeholder='weight' />
         </div>
         <div className='modal-buttons'>
-          <input type='submit' value='Add to workout' />
+          <input type='submit' value='Add' className='button btn-bordered' />
         </div>
       </form>
     )

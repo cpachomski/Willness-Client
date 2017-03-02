@@ -1,19 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import RoutineForm from 'components/RoutineForm'
+import RoutineCard from 'components/RoutineCard'
 import { pushWorkout } from 'actions/actions'
 
 const WorkoutForm = React.createClass({
-
-  getInitialState() {
-    return {
-      routineFormVisible: false
-    }
-  },
-  
-  clearRoutines() {
-    alert('clear routines')
-  },
 
   toggleRoutineForm() {
     this.setState({
@@ -27,34 +18,31 @@ const WorkoutForm = React.createClass({
   },
 
   render() {
-    const { userId, newWorkout } = this.props
-    const { routineFormVisible } = this.state
-  
-    const toggleButtonText = routineFormVisible ? 'Close' : 'Add Routine'
+    const { userId, newWorkout, toggleWorkoutForm } = this.props
     const submitBtn = newWorkout.routines.length > 0 ? <button onClick={this.handleSubmit}>Submit Workout</button> : null
 
+    const routineCards = newWorkout.routines.map((routine) => { return <RoutineCard {...routine} />})
+
     return (
-      <div className='workout-form'>
-        <div className='row'>
+      <div className='workout-form row'>
+        <div className='column'>
           <h3>Log a workout</h3>
         
           <RoutineForm />
         </div>
-        <div className='routines--list'>
-          {newWorkout.routines.map((routine) => {
-            return (
-              <div key={routine.name}>
-                <p>-----------------------------------------------------------</p>
-                <p>Name: {routine.name}</p>
-                <p>Reps: {routine.reps}</p>
-                <p>Sets: {routine.sets}</p>
-                <p>Weight: {routine.weight}</p>
-                <p>-----------------------------------------------------------</p>
-              </div>
-            )
-          })}
-          {submitBtn}
+        <div className='column space-between'>
+          <div className=' routines--list'>
+            {
+              newWorkout.routines.length > 0 
+              ?
+                (routineCards)
+              :
+                (<div className='routines--list none'><p>Add routines to submit a workout.</p> </div>)
+            }
+          </div>
+            {submitBtn}
         </div>
+        <button className='button close' onClick={toggleWorkoutForm}>X</button>
       </div>
     )
   }

@@ -5,11 +5,31 @@ const RoutineCard = React.createClass({
 
     const { _muscleGroups, name, reps, sets, weight} = this.props
     return (
-      <div className='routine--card'>
+      <div className='routine--card slideIn'>
         <h4 className='routine--name'>{name}</h4>
-        <p className='routine--reps'>Reps: {reps}</p>
-        <p className='routine--sets'>Sets: {sets}</p>
-        <p className='routine--weight'>Weight: {weight}</p>
+        <div className='routine--stats'>
+          <p className='routine--reps'>
+            <span>Reps</span>
+            <span>
+              <span>{reps}</span>
+              x
+            </span>
+          </p>
+          <p className='routine--sets'>
+            <span>Sets</span>
+            <span>
+              <span>{sets}</span>
+              x
+            </span>
+          </p>
+          <p className='routine--weight'>
+            <span>Weight</span> 
+            <span>
+              <span>{weight}</span> 
+              lbs
+            </span>
+          </p>
+        </div>
       </div>
     )
   }
