@@ -1,8 +1,22 @@
-button {
+button,
+.button {
 	background: white;
 	border: none;
-	color: green;
+	color: $green;
 
+	&:hover {
+		cursor: pointer;
+	}
+	
+	&:focus {
+		outline: none;
+	}
+
+	&.close{
+		position: absolute;
+		top: 0				px;
+		right: 5px;
+	}
 
 	&.btn--bordered {
 		height: 40px;
@@ -26,6 +40,7 @@ button {
 		&:after {
 			transition: transform 0.3s cubic-bezier(0.75, 0, 0.125, 1);
 		}
+		
 		&:after {
 			transition-delay: 0.1s;
 		}
@@ -44,13 +59,12 @@ button {
 			top: 0px;
 		}
 
-		&:hover {
-			cursor: pointer;
-		}
 
-		&:hover,
 		&:focus {
 			outline: none;
+		}
+
+		&:hover {
 			> span {
 				transform: translate3d(0, 100%, 0);
 			}
