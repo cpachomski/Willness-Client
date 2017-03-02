@@ -1,0 +1,36 @@
+.workout-form {
+	overflow: hidden;
+	position: relative;
+
+	.column {
+		min-height: 500px;
+
+		&:first-child{
+			width: 40%;
+			display: flex;
+			justify-content: space-between;
+			max-height: 500px;
+		}
+
+		&:nth-child(2) {
+			width: 60%;
+			height: 500px;
+			overflow: hidden;
+		}
+
+		.routines--list {
+			overflow-y: scroll;
+			height: 80%;
+			transform: translateX(20px);
+
+			&.none {
+				display: flex;
+				align-items: center;
+				align-content: center;
+				> p {
+					color: $green;
+				}
+			}
+		}
+	}
+}

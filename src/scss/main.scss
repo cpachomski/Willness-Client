@@ -6,6 +6,7 @@
 @import 'defaults/_fonts.scss';
 @import 'defaults/_app.scss';
 @import 'defaults/_structure.scss';
+@import 'defaults/_animations.scss';
 
 /* ELEMENTS */
 @import 'elements/_forms.scss';
@@ -16,7 +17,10 @@
 /* COMPONENTS */
 @import 'components/_navbar.scss';
 @import 'components/_entry-switcher.scss';
+@import 'components/_workout-form.scss';
 @import 'components/_workout-card.scss';
+@import 'components/_routine-form.scss';
+@import 'components/_routine-card.scss';
 
 /* CONTAINERS */
 @import 'containers/_dashboard.scss';
