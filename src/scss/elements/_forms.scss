@@ -1,6 +1,5 @@
 input,
-input[type],
-button {
+input[type] {
 	border-radius: 2px;
 	background: #FFF;
 	box-shadow: none;
@@ -14,8 +13,7 @@ button {
 
 
 input:focus,
-input[type]:focus,
-button:focus {
+input[type]:focus {
 	position: relative;
 	box-sizing: border-box;
 	border-color: $green;
