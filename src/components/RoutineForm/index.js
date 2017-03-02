@@ -27,7 +27,6 @@ const RoutineForm = React.createClass({
   },
 
   render() {
-    const { toggleRoutineForm } = this.props
     return (
       <form className='routine-form modal' onSubmit={this.handleSubmit}>
         <div className='modal-inputs'>
@@ -38,7 +37,6 @@ const RoutineForm = React.createClass({
           <input type='number' ref='weight' placeholder='weight' />
         </div>
         <div className='modal-buttons'>
-          <button onClick={toggleRoutineForm}>cancel</button>
           <input type='submit' value='Add to workout' />
         </div>
       </form>

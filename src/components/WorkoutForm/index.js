@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Modal from 'react-modal'
 import RoutineForm from 'components/RoutineForm'
 import { pushWorkout } from 'actions/actions'
 
@@ -36,17 +35,10 @@ const WorkoutForm = React.createClass({
 
     return (
       <div className='workout-form'>
-        <h3>Log a workout</h3>
-        <Modal 
-          isOpen={routineFormVisible}
-          contentLabel="Routine Form"
-          style={modalStyles}>
-          <RoutineForm toggleRoutineForm={this.toggleRoutineForm}/>
-        </Modal>
-        <div className='btn--container'>
-          <button onClick={this.clearRoutines}>Clear</button>
-          
-          <button onClick={this.toggleRoutineForm}>Add Routine</button>
+        <div className='row'>
+          <h3>Log a workout</h3>
+        
+          <RoutineForm />
         </div>
         <div className='routines--list'>
           {newWorkout.routines.map((routine) => {

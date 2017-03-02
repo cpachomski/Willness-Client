@@ -5,7 +5,6 @@ import {
   SET_TOKEN
 } from 'actions'
 
-
 function setLoginStarted() {
   return {
     type: SET_LOGIN_STARTED
