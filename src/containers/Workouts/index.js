@@ -8,7 +8,7 @@ const Workouts = React.createClass({
   
   getInitialState() {
     return {
-      workoutFormVisible: true
+      workoutFormVisible: false
     }
   },
 
